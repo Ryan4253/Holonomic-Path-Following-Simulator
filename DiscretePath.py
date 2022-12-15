@@ -41,7 +41,7 @@ class DiscretePath:
         if(math.isnan(radius)):
             return 0.0
 
-        return 1 / radius;
+        return 1 / radius
 
     def print(self):
         for point in self.path:

@@ -20,3 +20,7 @@ class HolonomicChassis:
     def getPos(self):
         return Point(self.x, self.y)
 
+    def setPos(self, x, y):
+        self.x = x
+        self.y = y
+

@@ -6,10 +6,10 @@ class PID:
         self.kI = kI
         self.kD = kD
         self.maxError = maxError
-        self.error = 0
+        self.error = 10000
         self.prevError = 0
         self.integral = 0
-        self.derivative = 0
+        self.derivative = None
         self.output = 0
 
     def step(self, error, dt):
@@ -20,6 +20,12 @@ class PID:
 
         self.output = self.kP * self.error + self.kI * self.integral + self.kD * self.derivative 
         return self.output
+
+    def reset(self):
+        self.error = 10000
+        self.prevError = 0
+        self.integral = 0
+        self.derivative = None
 
     def getError(self):
         return self.error
